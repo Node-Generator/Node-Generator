@@ -16,6 +16,8 @@ GITURL=git@github.com:Node-Generator/$TARGET.git
 [ ! $TARGET ] && echo "Error: You need to specify a target as first argument." && exit 1;
 [ $TARGET == "Node-Generator" ] && echo "Error: You can't generate the generator." && exit 1;
 
+echo "Generating \"$1\""
+
 # Get the latest version of the repository
 rm -rf $TARGETPATH
 git clone $GITURL $TARGETPATH
@@ -26,8 +28,6 @@ git clone $GITURL $TARGETPATH
 # # Check if there is a content or root folder to copy
 [ ! -d $CONTENTPATH ] && [ ! -d $ROOTPATH ] && echo "Error: Directory $TARGET DOES NOT have any src or root to copy." && exit 1;
 
-
-echo "Generating \"$1\""
 # # Change to execution mode the preGen file and run it
 [ -f $PREGENFILE ] && chmod +x $PREGENFILE && $PREGENFILE;
 
