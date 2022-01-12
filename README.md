@@ -23,6 +23,8 @@ nodeGen [TARGET]
 The target is the name of any repository you can find in the [Node Generator GitHub Organization](https://github.com/Node-Generator).
 
 :warning: Warning! When a TARGET is generated, it overwrites the existing files, you'd have to check your `git changes` and keep both, your previous version, and the new one (generated one).
+
+:warning: Warning! It is recommended to commit your previous changes before you generate some content using `nodeGen`.
 ## How does it work?
 The script;
 1) Clones the GitHub repository in his local installation folder (removes the previsous installation if it exist to get the latest version from the main branch)
